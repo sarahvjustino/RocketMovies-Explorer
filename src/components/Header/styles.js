@@ -22,6 +22,7 @@ export const Container = styled.div`
     }
 `
 export const Profile = styled.div`
+    min-width: 12.4rem;
     display: flex;
     align-items: center;
 
@@ -32,6 +33,7 @@ export const Profile = styled.div`
         flex-direction: column;
 
         font-size: 0.88rem;
+        text-align: right;
         color: ${({ theme }) => theme.COLORS.WHITE};
 
         > a{

@@ -6,18 +6,18 @@ export const Container = styled.button`
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 
-    padding: 2rem;
-
-    background-color: ${({ theme }) => theme.COLORS.PINK};
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    padding: 0.85rem 2rem;
 
     font-size: 1rem;
+    font-weight: 400;
 
     border: none;
     border-radius: .5rem;
 
-    > svg {
-        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    &:disabled{
+        opacity: 0.5;
     }
 `

@@ -28,4 +28,22 @@ export default createGlobalStyle`
             filter: brightness(0.9);
         }
     }
+
+    .light-button{
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+        > svg {
+        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+        }
+    }
+
+    .dark-button{
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+        color: ${({ theme }) => theme.COLORS.PINK};
+
+        > svg{
+            color: ${({ theme }) => theme.COLORS.PINK};
+        }
+    }
 `
