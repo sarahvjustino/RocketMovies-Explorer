@@ -12,5 +12,9 @@ export function Rating({ grade, isBigSize }) {
     }
   }
 
-  return <Container $isbigsize={isBigSize.toString()}>{stars}</Container>;
+  return (
+    <Container $isbigsize={isBigSize && isBigSize.toString()}>
+      {stars}
+    </Container>
+  );
 }

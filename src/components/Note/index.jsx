@@ -7,7 +7,7 @@ export function Note({ data, rating, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
-      <Rating grade={rating} isBigSize={false}></Rating>
+      <Rating grade={rating}></Rating>
       <p>{data.description}</p>
 
       {data.tags && (

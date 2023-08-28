@@ -44,7 +44,7 @@ export function Home() {
               ],
             }}
             rating="4"
-          />{" "}
+          />
           <Note
             data={{
               title: "Interestellar",
