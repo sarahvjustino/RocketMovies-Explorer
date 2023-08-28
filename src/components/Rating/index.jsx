@@ -1,16 +1,16 @@
 import { Container } from "./styles";
 
-import { VscStarFull, VscStarEmpty } from "react-icons/vsc";
+import { HiMiniStar, HiOutlineStar } from "react-icons/hi2";
 
 export function Rating({ grade, isBigSize }) {
   let stars = [];
   for (let cont = 1; cont <= 5; cont++) {
     if (cont <= grade) {
-      stars.push(<VscStarFull key={cont} />);
+      stars.push(<HiMiniStar key={cont} />);
     } else {
-      stars.push(<VscStarEmpty key={cont} />);
+      stars.push(<HiOutlineStar key={cont} />);
     }
   }
 
-  return <Container isBigSize={isBigSize}>{stars}</Container>;
+  return <Container $isbigsize={isBigSize.toString()}>{stars}</Container>;
 }

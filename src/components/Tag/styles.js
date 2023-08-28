@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.span`
     padding: 0.31rem 1rem;
     background-color: ${({ theme }) => theme.COLORS.GRAY_400};
     color: ${({ theme }) => theme.COLORS.WHITE};

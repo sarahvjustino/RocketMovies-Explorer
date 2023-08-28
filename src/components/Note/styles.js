@@ -14,13 +14,21 @@ export const Container = styled.button`
         font-size: 1.5rem;
         font-weight: 700;
         color: ${({ theme }) => theme.COLORS.WHITE};
-        margin-bottom: .5rem
+        margin-bottom: .5rem;
     }
 
     > p{
         font-size: 1rem;
         font-weight: 400;
-        text-overflow: ellipsis;
         color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        max-height: 3.3rem;
+        margin: 1rem 0;
     }
+    
 `

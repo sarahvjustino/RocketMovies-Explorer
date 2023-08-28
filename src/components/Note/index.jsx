@@ -13,7 +13,7 @@ export function Note({ data, rating, ...rest }) {
       {data.tags && (
         <footer>
           {data.tags.map((tag) => (
-            <Tag key={tag.id}>{tag.name}</Tag>
+            <Tag name={tag.name} key={tag.id} />
           ))}
         </footer>
       )}
