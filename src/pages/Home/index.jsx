@@ -3,7 +3,7 @@ import { FiPlus } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
-import { Section } from "../../components/Section";
+import { Title } from "../../components/Title";
 import { Note } from "../../components/Note";
 
 export function Home() {
@@ -13,7 +13,7 @@ export function Home() {
 
       <main>
         <div className="top-content">
-          <Section title="Meus filmes" />
+          <Title title="Meus filmes" />
           <Button icon={FiPlus} title="Adicionar filme" />
         </div>
         <Content>

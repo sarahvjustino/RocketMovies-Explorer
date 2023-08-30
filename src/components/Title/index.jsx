@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-export function Section({ title }) {
+export function Title({ title }) {
   return (
     <Container>
       <h2>{title}</h2>

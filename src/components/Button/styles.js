@@ -12,7 +12,7 @@ export const Container = styled.button`
     padding: 0.85rem 2rem;
 
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
 
     border: none;
     border-radius: .5rem;
