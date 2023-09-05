@@ -9,7 +9,7 @@ export function Profile() {
   return (
     <Container>
       <header>
-        <ButtonText />
+        <ButtonText title="Voltar" />
       </header>
 
       <Form>

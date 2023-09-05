@@ -15,7 +15,7 @@ export function New() {
 
       <main>
         <Form>
-          <ButtonText />
+          <ButtonText title="Voltar" />
           <Title title="Novo filme" />
           <Wrapper>
             <Input placeholder="Título" />

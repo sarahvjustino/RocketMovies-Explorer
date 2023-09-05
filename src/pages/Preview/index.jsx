@@ -14,7 +14,7 @@ export function Preview() {
 
       <main>
         <Content>
-          <ButtonText />
+          <ButtonText title="Voltar" />
           <div className="movieTitle">
             <Title title="Interestellar" />
             <Rating grade="4" isBigSize={true} />

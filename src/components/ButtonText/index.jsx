@@ -2,11 +2,11 @@ import { Container } from "./styles";
 
 import { BiArrowBack } from "react-icons/bi";
 
-export function ButtonText() {
+export function ButtonText({ title }) {
   return (
     <Container>
       <a href="/">
-        <BiArrowBack /> Voltar
+        <BiArrowBack /> {title}
       </a>
     </Container>
   );
