@@ -8,7 +8,7 @@ import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
 
-export function Create() {
+export function New() {
   return (
     <Container>
       <Header />
