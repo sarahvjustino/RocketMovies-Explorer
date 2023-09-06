@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.span`
-    >a {
+export const Container = styled(Link)`
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -14,5 +14,4 @@ export const Container = styled.span`
             font-size: 1.3rem;
             color: ${({ theme }) => theme.COLORS.PINK};
         }
-    }
 `

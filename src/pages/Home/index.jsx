@@ -1,5 +1,6 @@
 import { Container, Content } from "./styles";
 import { FiPlus } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
@@ -14,7 +15,9 @@ export function Home() {
       <main>
         <div className="top-content">
           <Title title="Meus filmes" />
-          <Button icon={FiPlus} title="Adicionar filme" />
+          <Link to="/new">
+            <Button icon={FiPlus} title="Adicionar filme" />
+          </Link>
         </div>
         <Content>
           <Note

@@ -41,11 +41,8 @@ export const Form = styled.form`
         margin: 1.5rem 0 2.6rem;
     }
 
-    > span{
+    > a{
         align-self: center;
-        font-size: 1rem;
-        text-align: center;
-        color: ${({ theme }) => theme.COLORS.PINK};
     }
 `
 
