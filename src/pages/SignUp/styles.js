@@ -42,7 +42,9 @@ export const Form = styled.form`
     }
 
     > a{
-        align-self: center;
+        font-size: 1rem;
+        text-align: center;
+        color: ${({ theme }) => theme.COLORS.PINK};
     }
 `
 
