@@ -49,4 +49,11 @@ export const Profile = styled(Link)`
         border-radius: 50%;
         border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
     }
+
+`
+
+export const Logout = styled(Link)`
+    background-color: transparent;
+    border: none;
+    color: ${({ theme }) => theme.COLORS.GRAY_200};
 `
