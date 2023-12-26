@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Form, Section, Wrapper } from "./styles";
 
 import { Header } from "../../components/Header";
@@ -9,6 +10,18 @@ import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
 
 export function New() {
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+  }
+
   return (
     <Container>
       <Header />
@@ -27,8 +40,27 @@ export function New() {
           <Section>
             <h3>Marcadores</h3>
             <div className="tags">
-              <NoteItem value="React" />
-              <NoteItem isNew placeholder="Novo marcador" />
+              {tags.map((tag, index) => {
+                return (
+                  <NoteItem
+                    key={String(index)}
+                    value={tag}
+                    OnClick={() => {
+                      handleRemoveTag(tag);
+                    }}
+                  />
+                );
+              })}
+
+              <NoteItem
+                isNew
+                placeholder="Novo marcador"
+                onChange={(event) => {
+                  setNewTag(event.target.value);
+                }}
+                value={newTag}
+                OnClick={handleAddTag}
+              />
             </div>
           </Section>
 
