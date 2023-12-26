@@ -32,6 +32,31 @@ function AuthProvider({ children }) {
     setData({});
   }
 
+  async function updateProfile({ user, avatarFile }) {
+    try {
+      if (avatarFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
+
+        const response = await api.patch("/users/avatar", fileUploadForm);
+        user.avatar = response.data.avatar;
+      }
+
+      const { password, old_password, ...userData } = user;
+      await api.put("/users", userData);
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(userData));
+
+      setData({ user, token: data.token });
+      alert("O perfil foi atualizado!");
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível atualizar o perfil.");
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@rocketmovies:user");
     const token = localStorage.getItem("@rocketmovies:token");
@@ -50,6 +75,7 @@ function AuthProvider({ children }) {
       value={{
         SignIn,
         SignOut,
+        updateProfile,
         user: data.user,
       }}
     >
