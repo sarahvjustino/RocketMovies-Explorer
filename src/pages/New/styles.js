@@ -35,7 +35,16 @@ export const Form = styled.form`
     &&::-webkit-scrollbar-thumb {
         margin-left: 1rem;
         border-radius: 0.5rem;
-        background: #FF859B;
+        background: ${({ theme }) => theme.COLORS.PINK};
+    }
+
+    > a{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        font-weight: 400;
+        color: ${({ theme }) => theme.COLORS.PINK};
     }
 
     > textarea{
