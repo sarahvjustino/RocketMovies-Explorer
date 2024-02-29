@@ -5,7 +5,7 @@ import { api } from "../../services/api";
 import { Input } from "../Input";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
-export function Header() {
+export function Header({ onChange }) {
   const { SignOut, user } = useAuth();
   const avatarURL = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -14,7 +14,7 @@ export function Header() {
     <Container>
       <h1>RocketMovies</h1>
 
-      <Input placeholder="Pesquisar pelo título" />
+      <Input placeholder="Pesquisar pelo título" onChange={onChange} />
 
       <Profile to="/profile">
         <div>

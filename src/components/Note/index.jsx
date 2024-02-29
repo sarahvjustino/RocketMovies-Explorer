@@ -10,10 +10,10 @@ export function Note({ data, rating, ...rest }) {
       <Rating grade={rating}></Rating>
       <p>{data.description}</p>
 
-      {data.tags && (
+      {data.tag && (
         <footer>
-          {data.tags.map((tag) => (
-            <Tag name={tag.name} key={tag.id} />
+          {data.tag.map((tag) => (
+            <Tag key={tag.id} name={tag.name} />
           ))}
         </footer>
       )}
