@@ -1,10 +1,9 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Container, Form, Section, Wrapper } from "./styles";
 
 import { Header } from "../../components/Header";
-import { ButtonText } from "../../components/ButtonText";
 import { Title } from "../../components/Title";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -21,7 +20,13 @@ export function New() {
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
 
+  const params = useParams();
+
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   function handleAddTag() {
     setTags((prevState) => [...prevState, newTag]);
@@ -56,6 +61,15 @@ export function New() {
 
     alert("Nota criada com sucesso!");
     navigate("/");
+  }
+
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja realmente excluir esta nota?");
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`);
+      handleBack();
+    }
   }
 
   return (
@@ -112,7 +126,7 @@ export function New() {
           </Section>
 
           <Wrapper>
-            <Button isDark title="Excluir filme" />
+            <Button isDark title="Excluir filme" onClick={handleRemove} />
             <Button title="Salvar alterações" onClick={handleNewMovieNote} />
           </Wrapper>
         </Form>

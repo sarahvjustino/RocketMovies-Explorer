@@ -19,19 +19,8 @@ export function Home() {
   const navigate = useNavigate();
 
   function handleNoteDetails(id) {
-    navigate(`/details/${id}`);
+    navigate(`/preview/${id}`);
   }
-
-  useEffect(() => {
-    async function fetchNotes() {
-      const response = await api.get(`/notes?title=${search}`);
-      console.log(response.data);
-
-      setNotes(response.data);
-    }
-
-    fetchNotes();
-  }, [search]);
 
   useEffect(() => {
     async function fetchTags() {
@@ -41,6 +30,16 @@ export function Home() {
 
     fetchTags();
   }, []);
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${search}`);
+
+      setNotes(response.data);
+    }
+
+    fetchNotes();
+  }, [search]);
 
   return (
     <Container>

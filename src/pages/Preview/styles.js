@@ -38,6 +38,22 @@ export const Content = styled.div`
         background: #FF859B;
     }
 
+    button {
+        height: 1rem;
+        background: transparent;
+        border: none;
+
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s;
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
+    > div:first-child {
+        display: flex;
+        justify-content: space-between;
+    }
+
     > .movieTitle, .movieInfo, span, .tags{
         display: flex;
         align-items: center;
